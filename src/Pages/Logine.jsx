@@ -1,25 +1,38 @@
  
-import { Link } from "react-router-dom";
-import { TEInput, TERipple } from "tw-elements-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { TERipple  } from "tw-elements-react";
  import useAuth from "../hooks/useAuth";
 import Sociallogin from "../Component/Sociallogin";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Logine = () => {
 
   const {login}=useAuth()
+  const location=useLocation()
+  const navigate=useNavigate()
+  console.log(location);
   const handlelogin=(e)=>{
     e.preventDefault()
-    console.log(e.trget);
-    // const form=new FormData(e.target)
-    // const  email=form.get('email')
-    // const Password=form.get('password')
-    // console.log(email,Password);
+    
+    const form=new FormData(e.target)
+    const  email=form.get('email')
+    const Password=form.get('password')
+    console.log(email,Password);
 
     // login work Stat now
-    // 
-    // 
-    // login(email,Password)
-    // .then(res=>console.log(res.user))
-    // .catch(error=>console.log(error))
+    
+    
+    login(email,Password)
+    .then(()=>{
+      toast('Login successful')
+      // after location
+      navigate(location?.state ? location.state:'/')
+
+    })
+
+
+    .catch(error=>toast('Data Provlem',error))
 
   }
   return (
@@ -56,22 +69,22 @@ const Logine = () => {
                           to your account
                         </p>
                         {/* <!--Username input--> */}
-                        <TEInput
+                        <input
                           name="email"
                           type="email"
-                          label="email"
-                          className="mb-4 input input-bordered"
+                         
+                          className="mb-4 block w-full  input input-bordered"
                           placeholder="Email"
-                        ></TEInput>
+                        ></input>
 
                         {/* <!--Password input--> */}
-                        <TEInput
+                        <input
                           name="password"
                           type="password"
-                          label="Password"
-                          className="mb-4 input input-bordered"
+                         
+                          className="mb-4 block w-full input input-bordered"
                           placeholder="Password"
-                        ></TEInput>
+                        ></input>
 
                         {/* <!--Submit button--> */}
                         <div className="mb-12 pb-1 pt-1 text-center">
@@ -132,7 +145,7 @@ const Logine = () => {
 
                         </div>
                       </form>
-                      <Sociallogin/>
+                      <div><Sociallogin/></div>
                     </div>
                   </div>
 

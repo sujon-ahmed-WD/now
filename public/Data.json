@@ -1,0 +1,104 @@
+[
+  {
+    "id": "1",
+    "image": " https://pbazaar.com/content/images/thumbs/0190837_plot-at-purbachal-land-project-navana-highland.jpeg",
+    "estate_title": "Luxurious Villa",
+    "segment_name": "Premium Estates",
+    "description": "A luxurious villa with stunning views and modern amenities.",
+    "price": "$1,200,000",
+    "status": "sale",
+    "area": "3500 sq ft",
+    "location": "Beverly Hills, CA",
+    "facilities": [
+      "living room",
+      "swimming pool",
+      "kitchen",
+      "home theater",
+      "gym"
+    ],
+    "view_property_button": "View Property"
+  },
+  {
+    "id": "2",
+    "image": "https://www.swadeshproperties.com/images/exclusive-lands-and-plots-for-sale-in-dhaka.jpg",
+    "estate_title": "Cozy Apartment",
+    "segment_name": "Urban Living",
+    "description": "A cozy apartment in the heart of the city, perfect for singles or couples.",
+    "price": "$350,000",
+    "status": "sale",
+    "area": "900 sq ft",
+    "location": "New York, NY",
+    "facilities": ["living room", "swimming pool", "kitchen", "gym"],
+    "view_property_button": "View Property"
+  },
+  {
+    "id": "3",
+    "image": "https://www.swadeshproperties.com/images/3-to-5-katha-plot.jpg",
+    "estate_title": "Spacious Family Home",
+    "segment_name": "Suburban Estates",
+    "description": "A spacious home perfect for families, located in a quiet neighborhood.",
+    "price": "$800,000",
+    "status": "sale",
+    "area": "2500 sq ft",
+    "location": "Austin, TX",
+    "facilities": [
+      "living room",
+      "swimming pool",
+      "kitchen",
+      "backyard",
+      "garage"
+    ],
+    "view_property_button": "View Property"
+  },
+  {
+    "id": "4",
+    "image": "https://www.rpclbd.com/images/three-katha-plots.jpg",
+    "estate_title": "Modern Condo",
+    "segment_name": "City Living",
+    "description": "A modern condo with all the amenities you need, located downtown.",
+    "price": "$600,000",
+    "status": "rent",
+    "area": "1200 sq ft",
+    "location": "San Francisco, CA",
+    "facilities": ["living room", "swimming pool", "kitchen", "gym", "parking"],
+    "view_property_button": "View Property"
+  },
+  {
+    "id": "5",
+    "image": "https://pbazaar.com/content/images/thumbs/0186862_5-katha-near-300ft-road-ready-plot-for-sell-g-block-beside-rupayan-centre.jpeg",
+    "estate_title": "Beachfront Property",
+    "segment_name": "Luxury Living",
+    "description": "A beautiful beachfront property with stunning ocean views.",
+    "price": "$2,500,000",
+    "status": "sale",
+    "area": "4000 sq ft",
+    "location": "Malibu, CA",
+    "facilities": [
+      "living room",
+      "swimming pool",
+      "kitchen",
+      "private beach",
+      "guest house"
+    ],
+    "view_property_button": "View Property"
+  },
+  {
+    "id": "6",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS47_lnpOWD9OQeitgWke53BUKnK3e8-BiB2g&s",
+    "estate_title": "Mountain Cabin",
+    "segment_name": "Nature Retreats",
+    "description": "A serene mountain cabin perfect for a peaceful getaway.",
+    "price": "$450,000",
+    "status": "sale",
+    "area": "1500 sq ft",
+    "location": "Aspen, CO",
+    "facilities": [
+      "living room",
+      "kitchen",
+      "fireplace",
+      "deck",
+      "hiking trails"
+    ],
+    "view_property_button": "View Property"
+  }
+]

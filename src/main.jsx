@@ -12,11 +12,18 @@ import MainRute from './Laout/MainRute';
 import Home from './Pages/Home';
 import ErrorPage from './Component/ErrorPage';
 import Update from './Pages/Update';
-import Expolor from './Pages/Expolor';
-import Resouce from './Pages/Resouce';
+ import Resouce from './Pages/Resouce';
 import Logine from './Pages/Logine';
 import Ragister from './Pages/Ragister';
 import AuthProvider from './Provider/AuthProvider';
+import Expolor from './Pages/Expolor';
+import PrivateRoute from './Private/PrivateRoute';
+import Contact from './Pages/Contact';
+ 
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+ 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,16 +32,26 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Home/>
-      },{
-        path:'/update',
-        element:<Update/>,
-
+        element:<Home/>,
+        loader:()=>fetch('/Data.json')
       },
       // Private ROute ::
       {
-        path:"/explor",
-        element:<Expolor/>
+        path:'/Data/:id',
+        element:<PrivateRoute><Expolor/></PrivateRoute>,
+         loader:()=>fetch(`/Data.json`)
+         
+
+      },
+ 
+      {
+        path:'/update',
+        element:<PrivateRoute><Update/></PrivateRoute>,
+        
+      },
+      {
+        path:'/contact',
+        element:<PrivateRoute><Contact/></PrivateRoute>
       },
       {
         path:"/resorce",
@@ -58,6 +75,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <AuthProvider>
         <RouterProvider router={router} />
+        <ToastContainer />
         </AuthProvider>
   </React.StrictMode>,
 )

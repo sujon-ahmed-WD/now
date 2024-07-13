@@ -1,8 +1,8 @@
- import { Link, NavLink } from "react-router-dom";
- import useAuth from "../hooks/useAuth";
+import { Link, NavLink } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
-  const { user, Logout,} = useAuth()
+  const { user, Logout } = useAuth();
   const links = (
     <>
       <li>
@@ -12,8 +12,9 @@ const Navbar = () => {
         <NavLink to="/update">Update profile</NavLink>
       </li>
       <li>
-        <NavLink to="/explor">Explorer land</NavLink>
+        <NavLink to="/contact">Contract</NavLink>
       </li>
+ 
       <li>
         <NavLink to="/resorce">Resource</NavLink>
       </li>
@@ -61,52 +62,49 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end  gap-3">
+          {user?.email ? (
+            <div className=" z-50 relative  dropdown dropdown-end">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar"
+              >
+                <div className="     w-12 rounded-full">
+                  <div className=" pt-3 relative z-50 tooltip" data-tip="hello">
+                    <img
+                      className=""
+                      alt="Tailwind CSS Navbar component"
+                      src={user?.photoURL}
+                    />
 
-        {
-          user?.email ? (
-            <div className="dropdown dropdown-end">
-
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar"
-          >
-            <div className="   w-12 rounded-full">
-                <img
-                  className=""
-                  alt="Tailwind CSS Navbar component"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                />
-               
+  
+                  </div>
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100
+           rounded-box w-52 "
+              >
+                <li>
+                  <button className="btn btn-sm btn-ghost">
+                    {user?.displayName}
+                  </button>
+                </li>
+                <li>
+                  <button onClick={Logout} className="btn btn-sm btn-ghost">
+                    Logout
+                  </button>
+                </li>
+              </ul>
             </div>
-          </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100
-           rounded-box w-52 ">
-            <li>
-              <button className="btn btn-sm btn-ghost">
-                Farhan
-              </button>
-            </li>
-            <li>
-              <button onClick={Logout} className="btn btn-sm btn-ghost">a
-                
-              Logout
-              </button>
-            </li>
-           </ul>
-            </div>
-          )
-          :
-          <Link to='/login'>
-            <button className="btn btn-sm btn-ghost">Login</button>
-          </Link>
-        }
+          ) : (
+            <Link to="/login">
+              <button className="btn btn-sm btn-ghost">Login</button>
+            </Link>
+          )}
 
-
-          <div>
-            {/* Signout Logc golo ..  */}
-
-          </div>
+          <div>{/* Signout Logc golo ..  */}</div>
         </div>
       </div>
     </div>
